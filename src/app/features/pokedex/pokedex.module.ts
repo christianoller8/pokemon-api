@@ -7,5 +7,6 @@ import { PokedexComponent } from "./components/pokedex/pokedex.component";
 @NgModule({
   declarations: [PokedexComponent],
   imports: [CommonModule, PokedexRoutingModule],
+  exports: [PokedexComponent],
 })
 export class PokedexModule {}

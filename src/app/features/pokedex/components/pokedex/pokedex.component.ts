@@ -1,21 +1,22 @@
 import { Component, OnInit } from "@angular/core";
-import { DataService } from "src/app/shared/implementations/data.service";
-import { Pokemon } from "src/app/shared/contracts/pokemon.interface";
-import { PokemonResponse } from "src/app/shared/contracts/response.interface";
+import { GetPokemonListService } from "src/app/shared/implementations/get-pokemon-list.service";
+import { Species } from "src/app/shared/contracts/species.interface";
+import { Observable } from "rxjs";
+import { map } from "rxjs/operators";
 
 @Component({
   selector: "app-pokedex",
   templateUrl: "./pokedex.component.html",
-  styleUrls: ["./pokedex.component.css"],
+  styleUrls: ["./pokedex.component.scss"],
 })
 export class PokedexComponent implements OnInit {
-  pokemons: Pokemon[] = [];
+  pokemon$!: Observable<Species[]>;
 
-  constructor(private pokeService: DataService) {}
+  constructor(private getPokemonList: GetPokemonListService) {}
 
   ngOnInit(): void {
-    this.pokeService.getPokemons().subscribe((response: PokemonResponse) => {
-      this.pokemons = response.data.pokemon_v2_pokemon;
-    });
+    this.pokemon$ = this.getPokemonList
+      .watch({ limit: 50, offset: 0 })
+      .valueChanges.pipe(map((result) => result.data.species));
   }
 }

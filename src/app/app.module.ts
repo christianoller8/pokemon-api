@@ -1,11 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpClientModule } from "@angular/common/http";
-// import { ApolloModule, Apollo } from "apollo-angular";
-// import { HttpLinkModule, HttpLink } from "apollo-angular-link-http";
-// import { ApolloLink, concat } from "apollo-link";
-
-// import { InMemoryCache } from "apollo-cache-inmemory";
+import { ApolloModule } from "apollo-angular";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -15,12 +11,13 @@ import { ErrorInterceptor } from "./core/interceptors/error.interceptor";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { PokedexModule } from "./features/pokedex/pokedex.module";
+import { GraphQLModule } from "./graphql.module";
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    // ApolloModule,
+    ApolloModule,
     PokedexModule,
     AppRoutingModule,
     HttpClientModule,
@@ -31,6 +28,7 @@ import { PokedexModule } from "./features/pokedex/pokedex.module";
         deps: [HttpClient],
       },
     }),
+    GraphQLModule,
   ],
   providers: [
     {
