@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { gql, Query } from "apollo-angular";
-import { Species } from "../contracts/species.interface";
+import { Species } from "../../features/pokedex/models/species.interface";
 
 interface SpeciesResponse {
   species: Species;
