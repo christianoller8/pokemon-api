@@ -7,20 +7,23 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HTTP_INTERCEPTORS, HttpClient } from "@angular/common/http";
 import { ErrorInterceptor } from "./core/interceptors/error.interceptor";
+import { GraphQLModule } from "./graphql.module";
 
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
-import { PokedexModule } from "./features/pokedex/pokedex.module";
-import { GraphQLModule } from "./graphql.module";
+
+import { SharedModule } from "./shared/shared.module";
+import { FeaturesModule } from "./features/features.module";
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     ApolloModule,
-    PokedexModule,
     AppRoutingModule,
     HttpClientModule,
+    FeaturesModule,
+    SharedModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

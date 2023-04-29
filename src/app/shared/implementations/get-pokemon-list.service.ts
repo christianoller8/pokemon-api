@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { gql, Query } from "apollo-angular";
-import { Species } from "../contracts/species.interface";
+import { Species } from "../../features/pokedex/models/species.interface";
 
 interface SpeciesListResponse {
   species: Species[];
@@ -10,7 +10,7 @@ interface SpeciesListResponse {
   providedIn: "root",
 })
 export class GetPokemonListService extends Query<SpeciesListResponse> {
-  query = gql`
+  override document = gql`
     query pokemonList($limit: Int!, $offset: Int!) {
       species: pokemon_v2_pokemonspecies(
         order_by: { generation_id: asc, id: asc }

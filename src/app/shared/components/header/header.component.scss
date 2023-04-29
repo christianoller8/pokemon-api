@@ -1,0 +1,46 @@
+.logo {
+  width: 200px; /* ajusta el tamaño según tus necesidades */
+  height: auto; /* mantiene la proporción original de la imagen */
+}
+
+.inicio-button {
+  background-color: white;
+  color: gray;
+  border: none;
+  padding: 10px;
+  width: 120px;
+  height: 120px;
+  margin: 0 5px;
+  position: relative;
+}
+
+.inicio-button:hover {
+  background-color: #a6a5a5;
+  color: white;
+}
+
+.inicio-button mat-icon {
+  margin-bottom: 5px;
+  font-size: 24px;
+}
+
+.pokedex-button {
+  background-color: white;
+  color: gray;
+  border: none;
+  padding: 10px;
+  width: 120px;
+  height: 120px;
+  margin: 0 5px;
+  position: relative;
+}
+
+.pokedex-button:hover {
+  background-color: #e3350d;
+  color: white;
+}
+
+.pokedex-button mat-icon {
+  margin-bottom: 5px;
+  font-size: 24px;
+}

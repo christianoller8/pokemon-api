@@ -1,0 +1,37 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.pokemon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemon img {
+  width: 230px;
+  height: 230px;
+}
+
+.pokemon-id {
+  margin-top: 3px;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.pokemon-name {
+  margin-top: 5px;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-family: "Teko", sans-serif;
+}
+
+.poke-link {
+  text-decoration: none;
+  color: rgb(168, 166, 166);
+}

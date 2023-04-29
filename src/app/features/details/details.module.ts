@@ -7,5 +7,6 @@ import { DetailsPageComponent } from "./components/details-page/details-page.com
 @NgModule({
   declarations: [DetailsPageComponent],
   imports: [CommonModule, DetailsRoutingModule],
+  exports: [DetailsPageComponent],
 })
 export class DetailsModule {}
