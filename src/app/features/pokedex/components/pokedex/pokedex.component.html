@@ -1,18 +1,23 @@
 <div class="container">
-  <div class="pokemon-list" *ngFor="let pokemon of pokemon$ | async">
+  <div class="pokemon-list" *ngFor="let pokemon of visiblePokemon">
     <div class="pokemon">
-      <img
-        [src]="
-          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' +
-          pokemon.id +
-          '.png'
-        "
-        alt="Pokemon sprite"
-      />
+      <a routerLink="/pokemon/{{ pokemon.id }}" class="poke-link">
+        <img
+          [src]="
+            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' +
+            pokemon.id +
+            '.png'
+          "
+          alt="Pokemon sprite"
+        />
+        <div class="pokemon-id">Nº. {{ pokemon.id }}</div>
+        <div class="pokemon-name" style="color: black">{{ pokemon.name }}</div>
+      </a>
     </div>
-    <a routerLink="/pokemon/{{ pokemon.id }}" class="poke-link">
-      <div class="pokemon-id">Nº. {{ pokemon.id }}</div>
-      <div class="pokemon-name" style="color: black">{{ pokemon.name }}</div>
-    </a>
+  </div>
+  <div class="load-more" *ngIf="showLoadMoreBtn && !firstLoad" #loadMoreBtn>
+    <button class="charge-button" (click)="onLoadMoreBtnClick()">
+      Cargar más pokemon
+    </button>
   </div>
 </div>

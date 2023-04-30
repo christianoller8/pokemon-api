@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { gql, Query } from "apollo-angular";
-import { Species } from "../../features/pokedex/models/species.interface";
+import { Species } from "src/app/features/pokedex/models/species.interface";
 
 interface SpeciesResponse {
   species: Species;
@@ -10,7 +10,7 @@ interface SpeciesResponse {
   providedIn: "root",
 })
 export class GetPokemonService extends Query<SpeciesResponse> {
-  query = gql`
+  override document = gql`
     query pokemon($id: Int!) {
       species: pokemon_v2_pokemonspecies_by_pk(id: $id) {
         id

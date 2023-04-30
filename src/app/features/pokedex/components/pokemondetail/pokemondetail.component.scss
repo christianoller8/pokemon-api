@@ -1,0 +1,31 @@
+.poke-name {
+  font-size: 2rem;
+  letter-spacing: 1px;
+  font-family: "Teko", sans-serif;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+}
+.poke-id {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  color: rgb(168, 166, 166);
+}
+
+.return-button {
+  background-color: #eb5d32;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.return-button:hover {
+  background-color: #da471b;
+  cursor: pointer;
+}
