@@ -14,6 +14,7 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
 import { SharedModule } from "./shared/shared.module";
 import { FeaturesModule } from "./features/features.module";
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,8 @@ import { FeaturesModule } from "./features/features.module";
     HttpClientModule,
     FeaturesModule,
     SharedModule,
+    HttpClientModule,
+    InfiniteScrollModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

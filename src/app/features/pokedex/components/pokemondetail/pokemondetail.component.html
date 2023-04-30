@@ -1,0 +1,61 @@
+<div class="container">
+  <ng-container *ngIf="visiblePokemon | async as pokemon">
+    <div class="row">
+      <div class="poke-info col-12">
+        <h2 class="poke-name">{{ pokemon.name | titlecase }}</h2>
+        <p class="poke-id">N.º {{ pokemon.id }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <img
+          [src]="
+            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' +
+            pokemon.id +
+            '.png'
+          "
+          alt="Pokemon sprite"
+          class="img-fluid"
+        />
+      </div>
+      <div class="col-md-8">
+        <p>Description: {{ pokemon }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h3>Evolution Chain</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div
+        class="col-md-4"
+        *ngFor="
+          let pokemon of pokemon.pokemon_v2_evolutionchain
+            ?.pokemon_v2_pokemonspecies
+        "
+      >
+        <a routerLink="/pokemon/{{ pokemon.id }}">
+          <img
+            [src]="
+              'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' +
+              pokemon.id +
+              '.png'
+            "
+            alt="{{ pokemon.name }} sprite"
+            class="img-fluid"
+            style="width: 50%; margin-top: 40px"
+          />
+          <p>{{ pokemon.name | titlecase }}</p>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <button class="return-button" routerLink="/pokemon">
+          Ir a la Pokédex
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>
