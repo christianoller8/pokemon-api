@@ -12,12 +12,15 @@ import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { PokedexModule } from "./features/pokedex/pokedex.module";
 import { GraphQLModule } from "./graphql.module";
+import { LandingModule } from "./features/landing/landing.module";
+
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     ApolloModule,
+    LandingModule,
     PokedexModule,
     AppRoutingModule,
     HttpClientModule,

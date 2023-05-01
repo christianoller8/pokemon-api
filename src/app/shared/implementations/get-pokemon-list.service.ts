@@ -10,7 +10,7 @@ interface SpeciesListResponse {
   providedIn: "root",
 })
 export class GetPokemonListService extends Query<SpeciesListResponse> {
-  query = gql`
+  override document = gql`
     query pokemonList($limit: Int!, $offset: Int!) {
       species: pokemon_v2_pokemonspecies(
         order_by: { generation_id: asc, id: asc }

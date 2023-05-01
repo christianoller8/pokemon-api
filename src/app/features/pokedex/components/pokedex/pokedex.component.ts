@@ -18,5 +18,7 @@ export class PokedexComponent implements OnInit {
     this.pokemon$ = this.getPokemonList
       .watch({ limit: 50, offset: 0 })
       .valueChanges.pipe(map((result) => result.data.species));
+
+      console.log(this.pokemon$);
   }
 }
