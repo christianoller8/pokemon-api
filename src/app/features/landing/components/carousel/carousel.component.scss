@@ -1,11 +1,13 @@
-.general {
+
+.carousel-overflow {
   padding: 100px 0px 150px;
 
   overflow: hidden;
 
-  @media (min-width: 1000px) {
-    margin: 0px 20%;
+  @media (min-width: 1300px) {
+    margin: 0px 0px;
   }
+
 }
 
 .carousel-container {

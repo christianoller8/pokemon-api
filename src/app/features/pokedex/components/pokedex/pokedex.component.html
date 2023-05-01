@@ -1,7 +1,9 @@
-<div class="container">
-  <div class="pokemon-list" *ngFor="let pokemon of visiblePokemon">
-    <div class="pokemon">
-      <a routerLink="/pokemon/{{ pokemon.id }}" class="poke-link">
+<div class="main">
+
+  
+  <div class="pokemon-list" >
+    <div class="pokemon" *ngFor="let pokemon of visiblePokemon">
+      <a routerLink="pokemon/{{ pokemon.id }}" class="poke-link">
         <img
           [src]="
             'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' +

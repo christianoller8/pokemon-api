@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Observable, map, min } from "rxjs";
+import { Observable, map } from "rxjs";
 import { IPokemonPreview } from "../../models/IPokemonPreview";
 import { GetPokemonPreviewService } from "src/app/shared/implementations/get-pokemon-preview.service";
 

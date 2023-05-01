@@ -25,7 +25,6 @@ import { InfiniteScrollModule } from "ngx-infinite-scroll";
     HttpClientModule,
     FeaturesModule,
     SharedModule,
-    HttpClientModule,
     InfiniteScrollModule,
     TranslateModule.forRoot({
       loader: {
