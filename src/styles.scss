@@ -18,3 +18,11 @@
     font-family: BundayLight;
     src: url(assets/fonts/BundayClean-Light.ttf) format("opentype");
 }
+
+@mixin pokemonType($borderRadius, $color){
+    border-radius: $borderRadius;
+    background-color: $color;
+    width: fit-content;
+    padding: 2px 5px;
+    margin: 0px 2px;
+}
