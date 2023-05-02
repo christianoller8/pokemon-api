@@ -15,6 +15,8 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { SharedModule } from "./shared/shared.module";
 import { FeaturesModule } from "./features/features.module";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { CoreModule } from "./core/core.module";
+import { LoadingInterceptor } from "./core/interceptors/loading.interceptor";
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,8 +36,14 @@ import { InfiniteScrollModule } from "ngx-infinite-scroll";
       },
     }),
     GraphQLModule,
+    CoreModule,
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
+      multi: true,
+    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptor,
