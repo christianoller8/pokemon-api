@@ -17,6 +17,9 @@ import { FeaturesModule } from "./features/features.module";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MaterialModule } from "./shared/components/material/material.module";
+import { CoreModule } from "./core/core.module";
+import { LoadingInterceptor } from "./core/interceptors/loading.interceptor";
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -38,8 +41,14 @@ import { MaterialModule } from "./shared/components/material/material.module";
     }),
     GraphQLModule,
     BrowserAnimationsModule,
+    CoreModule,
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
+      multi: true,
+    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptor,
