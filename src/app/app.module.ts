@@ -15,6 +15,8 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { SharedModule } from "./shared/shared.module";
 import { FeaturesModule } from "./features/features.module";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MaterialModule } from "./shared/components/material/material.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +25,7 @@ import { InfiniteScrollModule } from "ngx-infinite-scroll";
     ApolloModule,
     AppRoutingModule,
     HttpClientModule,
+    MaterialModule,
     FeaturesModule,
     SharedModule,
     InfiniteScrollModule,
@@ -34,6 +37,7 @@ import { InfiniteScrollModule } from "ngx-infinite-scroll";
       },
     }),
     GraphQLModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     {

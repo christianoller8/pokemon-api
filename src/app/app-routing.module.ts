@@ -1,11 +1,16 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { LandingPageComponent } from "./features/landing/components/landing-page/landing-page.component";
+import { LoginComponent } from "./features/login/login/login.component";
 
 const routes: Routes = [
   {
     path: "",
-    component: LandingPageComponent
+    component: LandingPageComponent,
+  },
+  {
+    path: "login",
+    component: LoginComponent,
   },
   {
     path: "pokedex",
@@ -20,8 +25,8 @@ const routes: Routes = [
   {
     path: "**",
     redirectTo: "",
-    pathMatch:"full"
-  }
+    pathMatch: "full",
+  },
 ];
 
 @NgModule({

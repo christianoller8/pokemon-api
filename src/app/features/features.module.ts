@@ -8,12 +8,14 @@ import { PokedexModule } from "./pokedex/pokedex.module";
 import { DetailsPageComponent } from "./details/components/details-page/details-page.component";
 import { LandingPageComponent } from "./landing/components/landing-page/landing-page.component";
 import { PokedexComponent } from "./pokedex/components/pokedex/pokedex.component";
+import { LoginModule } from "./login/login.module";
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     AppRoutingModule,
+    LoginModule,
     DetailsModule,
     LandingModule,
     PokedexModule,
