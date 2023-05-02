@@ -19,7 +19,7 @@ export class CarouselComponent implements OnInit {
 
   ngOnInit(): void {
 
-    const offset = Math.floor(Math.random() * 500);
+    const offset = Math.floor(Math.random() * 1000);
     
     this.pokemonList$ = this.getPokemonList
     .watch({ limit: 10, offset: offset })

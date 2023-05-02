@@ -1,6 +1,6 @@
 <div class="main">
   <div class="pokemon-detail">
-    <ng-container *ngIf="visiblePokemon | async as pokemon">
+    <ng-container *ngIf="visiblePokemon | async as pokemon ; else pokemonNotFound">
       <div class="margin">
         <div class="poke-info col-12">
           <h2 class="poke-name">{{ pokemon.name | titlecase }}</h2>
@@ -55,5 +55,11 @@
         </div>
       </div>
     </ng-container>
+
+    <ng-template #pokemonNotFound>
+      <div class="error">
+        <h2 class="poke-name">Ups! This pokemon doesn't have more details</h2>
+      </div>
+    </ng-template>
   </div>
 </div>
