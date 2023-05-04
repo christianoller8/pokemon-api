@@ -1,7 +1,11 @@
 .main {
   background-image: url(../../../../../assets/images/container_bg.png);
   background-color: white;
+}
 
+.search {
+  display: flex;
+  justify-content: end;
 }
 
 .pokemon {
@@ -11,7 +15,7 @@
   padding: 2px;
 }
 
-.pokemon-list{
+.pokemon-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -24,7 +28,7 @@
   width: 200px;
   height: auto;
   background-color: #f2f2f2;
-  margin : 5px;
+  margin: 5px;
 
   border-radius: 5px;
 }
