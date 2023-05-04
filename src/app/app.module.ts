@@ -19,7 +19,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MaterialModule } from "./shared/components/material/material.module";
 import { CoreModule } from "./core/core.module";
 import { LoadingInterceptor } from "./core/interceptors/loading.interceptor";
-
+import { TimeoutInterceptor } from "./core/interceptors/timeout.interceptor";
 
 @NgModule({
   declarations: [AppComponent],
@@ -52,6 +52,11 @@ import { LoadingInterceptor } from "./core/interceptors/loading.interceptor";
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TimeoutInterceptor,
       multi: true,
     },
   ],

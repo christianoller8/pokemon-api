@@ -9,6 +9,8 @@ import { DetailsPageComponent } from "./details/components/details-page/details-
 import { LandingPageComponent } from "./landing/components/landing-page/landing-page.component";
 import { PokedexComponent } from "./pokedex/components/pokedex/pokedex.component";
 import { LoginModule } from "./login/login.module";
+import { MaterialModule } from "../shared/components/material/material.module";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [],
@@ -19,6 +21,8 @@ import { LoginModule } from "./login/login.module";
     DetailsModule,
     LandingModule,
     PokedexModule,
+    MaterialModule,
+    FormsModule,
   ],
   exports: [DetailsPageComponent, LandingPageComponent, PokedexComponent],
 })
