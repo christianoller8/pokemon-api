@@ -7,7 +7,10 @@ import { AuthService } from "src/app/shared/implementations/auth.service";
   styleUrls: ["./landing-page.component.scss"],
 })
 export class LandingPageComponent {
+  
+  role = "";
+  
   constructor(private authService: AuthService) {
-    this.authService.currentRol();
+    this.role = this.authService.currentRol();
   }
 }

@@ -1,4 +1,4 @@
 <div class="main">
-    <app-news></app-news>
+    <app-news [hidden]="role !== 'Administrator'"></app-news>
     <app-carousel></app-carousel>
 </div>

@@ -1,5 +1,5 @@
 <div class="main">
-  <div class="search container-form mt-3 mr-6">
+  <div class="search container-form mt-3 mr-6" [hidden]="role !== 'Administrator'">
     <mat-form-field color="warn" class="selector">
       <mat-label>Order By</mat-label>
       <mat-select>
