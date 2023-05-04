@@ -20,7 +20,7 @@ export class AuthService {
   }
 
   isLoggedIn() {
-    return !!sessionStorage.getItem("token");
+    return sessionStorage.getItem("token");
   }
 
   logout() {
@@ -28,10 +28,15 @@ export class AuthService {
     this.router.navigate(["/login"]);
   }
 
-  currentRol() {
+  currentRol() : string{
     const token = sessionStorage.getItem("token");
-    const decoded = jwt_decode(token!);
 
-    // console.log(decoded);
+    let decoded;
+    if(token){
+      decoded = jwt_decode(token) as any;
+      return decoded.role;
+    }
+
+    return "";
   }
 }

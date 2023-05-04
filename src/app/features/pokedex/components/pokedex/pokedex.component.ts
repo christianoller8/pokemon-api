@@ -3,6 +3,7 @@ import { GetPokemonListService } from "src/app/shared/implementations/get-pokemo
 import { Species } from "src/app/features/pokedex/models/species.interface";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
+import { AuthService } from "src/app/shared/implementations/auth.service";
 
 @Component({
   selector: "app-pokedex",
@@ -16,9 +17,11 @@ export class PokedexComponent implements OnInit {
   showLoadMoreBtn = false;
   firstLoad = true;
 
+  role="";
+
   @ViewChild("loadMoreBtn") loadMoreBtn!: ElementRef;
 
-  constructor(private getPokemonList: GetPokemonListService) {}
+  constructor(private getPokemonList: GetPokemonListService, private authService : AuthService) {}
 
   ngOnInit(): void {
     this.getPokemonList
@@ -32,6 +35,8 @@ export class PokedexComponent implements OnInit {
       });
 
     window.addEventListener("scroll", this.onScroll.bind(this));
+
+    this.role = this.authService.currentRol();
   }
 
   ngOnDestroy(): void {

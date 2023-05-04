@@ -1,3 +1,6 @@
+
+$spinnerSize : 70px;
+
 .cssload-container {
     position: fixed;
     width: 100%;
@@ -15,18 +18,26 @@
     position: absolute;
     left: 48%;
     top: 40%;
-    width: 63px;
-    height: 63px;
-    margin: 0 auto;
-    border: 4px solid rgb(0, 0, 0);
-    border-radius: 50%;
-    border-left-color: transparent;
-    border-right-color: transparent;
+    width: $spinnerSize;
+    height: $spinnerSize;
+
+
     animation: cssload-spin 500ms infinite linear;
     -o-animation: cssload-spin 500ms infinite linear;
     -ms-animation: cssload-spin 500ms infinite linear;
     -webkit-animation: cssload-spin 500ms infinite linear;
     -moz-animation: cssload-spin 500ms infinite linear;
+  }
+
+  .spinner-img{
+
+    //position: absolute;
+    //transform-origin: center;
+    // left: 48%;
+    // top: 40%;
+
+    width: $spinnerSize;
+    height: $spinnerSize;
   }
   
   @keyframes cssload-spin {
